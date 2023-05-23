@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Extra - JavaScript: Reproduzindo Mais Métodos de Array e de String
+  </title>
+</head>
+
+<body>
+  <h1>Abra o console!</h1>
+  <h2>Reproduzindo métodos de Array</h2>
+
+  <h3>forEach</h3>
+  <code>
+    <pre>
+      function callbackForEach(element, i, array) { 
+        return arrayVazio.push(array[i] = element * 2); 
+      } 
+
+      function forEach(array, callback) { 
+        for (let i = 0; i < array.length; i++) { 
+            callback(array[i], i, array) 
+        } 
+      } 
+      forEach(arrayForEach, callbackForEach) 
+    </pre>
+    </code>
+
+  <h3>find</h3>
+  <code>
+    <pre>
+      function callbackFind(element, i, array) {
+        return element > 2 && element < 12
+
+      }
+
+      function callbackFindTwo(element, i, array) {
+        return element > 15
+        
+      }
+
+      function find(array, callback) {
+        for (let i = 0; i < array.length; i++) {
+          if (callback(array[i]) === true) {
+            return array[i]
+          }
+        }
+        return undefined
+      }
+      find(arrayFind, callbackFind)
+      find(arrayFind, callbackFindTwo)
+    </pre>
+  </code>
+
+  <h3>indexOf</h3>
+  <code>
+    <pre>
+      function indexOf(array, elementoPesquisa) {
+  
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] === elementoPesquisa) {
+            return i
+          }
+        }
+        return -1
+      }
+      indexOf(arrayIndexOf, 2)
+      indexOf(arrayIndexOf, "apollo")
+    </pre>
+  </code>
+
+  <h3>includes</h3>
+  <code>
+    <pre>
+      function includes(array, element) {
+        for (let i = 0; i < array.length; i++) {
+          if(element > 500) {
+            return true
+          }else if(element === "duck") {
+            return true
+          }
+        }
+        return false
+      }
+      includes(arrayIncludes, 10)
+      includes(arrayIncludes, "duck")
+    </pre>
+  </code>
+
+  <h3>some</h3>
+  <code>
+    <pre>
+      const callbackSome = (element, i, array) => {
+        return element > 82 && true;
+      };
+      
+      const callbackSome2 = (element, i, array) => {
+        if (element) {
+          return false;
+        }
+      };
+      
+      function some(array, callback) {
+        for (let i = 0; i < array.length; i++) {
+          if(callback(array[i])){
+            return true
+          }
+        }
+        return false
+      }
+      some(arrySome, callbackSome)
+      some(arrySome, callbackSome2)
+    </pre>
+  </code>
+
+  <h3>join</h3>
+  <code>
+    <pre>
+      function join(array, value=",") {
+        let res = ""
+        for (let i = 0; i < array.length; i++) {
+          if(array[i] === null || array[i] === undefined) {
+            array[i] = ""
+          }
+          if(i !== 0) {
+            res += value + array[i]
+          }else {
+            res += array[i] 
+          } 
+        }
+        return res
+      }
+      join(arrayJoin, " ")
+      join(arrayJoin, "")
+      join(arrayJoin, "-")
+    </pre>
+  </code>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
